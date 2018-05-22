@@ -1,0 +1,29 @@
+group 'org.lion'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+def rootdir = '/mnt/old/src/git/android-dev/acdemo/framework2/framework_base_2.3'
+sourceSets {
+    main {
+        java {
+            srcDirs = [
+                    "${rootdir}/core/java",
+                    "${rootdir}/services/java",
+                    "${rootdir}/graphics/java",
+                    "${rootdir}/policy/src",
+                    "${rootdir}/telephony/java",
+                    "${rootdir}/media/java",
+            ]
+        }
+    }
+}
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
